@@ -1,0 +1,11 @@
+/* src/styles/global.css */
+/* @import '@fontsource/inter/variable.css'; */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    background-color: #F8F8F8;
+    font-family: 'Inter', sans-serif; /* Ensure Inter is applied here */
+}
