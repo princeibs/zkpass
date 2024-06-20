@@ -60,11 +60,33 @@ export const BackArrowIcon = () => {
   );
 };
 
+export const DropdownIcon = () => {
+  return (
+    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M9.7803 0.219668C10.0732 0.512558 10.0732 0.987438 9.7803 1.28033L5.53033 5.5303C5.23744 5.8232 4.76256 5.8232 4.46967 5.5303L0.219668 1.28033C-0.0732225 0.987438 -0.0732225 0.512558 0.219668 0.219668C0.512558 -0.0732225 0.987438 -0.0732225 1.28033 0.219668L5 3.93934L8.7197 0.219668C9.0126 -0.0732225 9.4874 -0.0732225 9.7803 0.219668Z" fill="#24292E"/>
+</svg>
+
+  );
+};
+
 export const RightArrowIcon = () => {
   return (
     <svg width="7" height="13" viewBox="0 0 7 13" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M0.146447 12.8536C-0.0488156 12.6583 -0.0488156 12.3417 0.146447 12.1464L5.79289 6.5L0.146446 0.853554C-0.0488161 0.658291 -0.0488161 0.341709 0.146446 0.146446C0.341708 -0.0488157 0.658291 -0.0488158 0.853553 0.146446L6.85355 6.14645C7.04882 6.34171 7.04882 6.65829 6.85355 6.85355L0.853553 12.8536C0.658291 13.0488 0.341709 13.0488 0.146447 12.8536Z" fill="#E4E4E4"/>
     </svg>
+    
+  );
+};
+
+export const ModalCloseIcon = () => {
+  return (
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.2266 19.7732L19.7732 12.2266" stroke="#425D8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M19.7732 19.7732L12.2266 12.2266" stroke="#425D8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.0001 29.3334H20.0001C26.6667 29.3334 29.3334 26.6667 29.3334 20.0001V12.0001C29.3334 5.33341 26.6667 2.66675 20.0001 2.66675H12.0001C5.33341 2.66675 2.66675 5.33341 2.66675 12.0001V20.0001C2.66675 26.6667 5.33341 29.3334 12.0001 29.3334Z" stroke="#425D8A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
     
   );
 };
@@ -110,6 +132,17 @@ export const CheckGreyIcon = () => {
         />
       </g>
     </svg>
+  );
+};
+
+export const CheckGreyIconXl = () => {
+  return (
+    <svg width="144" height="144" viewBox="0 0 144 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="72" cy="72" r="62" fill="#B5B5B5" stroke="#E7E7E7" stroke-width="20"/>
+<rect width="40" height="40" transform="translate(52 52)" fill="#B5B5B5"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M86.6339 61.1161C87.122 61.6043 87.122 62.3957 86.6339 62.8839L69.1339 80.3839C68.8995 80.6183 68.5815 80.75 68.25 80.75C67.9185 80.75 67.6005 80.6183 67.3661 80.3839L58.6161 71.6339C58.128 71.1457 58.128 70.3543 58.6161 69.8661C59.1043 69.378 59.8957 69.378 60.3839 69.8661L68.25 77.7322L84.8661 61.1161C85.3543 60.628 86.1457 60.628 86.6339 61.1161Z" fill="white"/>
+</svg>
+
   );
 };
 
