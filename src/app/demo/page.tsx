@@ -59,7 +59,7 @@ const Demo = () => {
         </span>
       </nav>
       <div className="flex-grow flex flex-col items-center justify-center pb-1 pt-12">
-        <span className="text-[20px] text-[#000]">zkPassport</span>
+        <span className="text-[20px] text-[#7C7C7C]">Z<span className="italic">ee</span>k</span>
 
         <div className="mt-8 flex flex-col items-center">
           <p className="xl:text-[24px] text-[18px] text-[#030303]">Koha has invited you to </p>
@@ -130,7 +130,7 @@ const Demo = () => {
             </span>
           </div>
           <button className="mx-auto flex xl:w-4/12 w-7/12 justify-center rounded-[12px] bg-[#DFDFDF] px-8 py-3 text-[12px] text-[#fff]" onClick={() => router.push("/review")}>
-            Use this template
+            Submit
           </button>
         </div>
       </div>

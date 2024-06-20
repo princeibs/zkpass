@@ -21,7 +21,7 @@ const Template = () => {
       <div className="mx-auto flex xl:w-7/12 w-9/12 flex-col items-center justify-start gap-5 pt-12 flex-grow">
         <div className="w-full">
           <div className="mx-auto flex w-full flex-row justify-between">
-            <p onClick={() => router.push(`/template`)} className="cursor-pointer">zkPassport</p>
+            <p onClick={() => router.push(`/template`)} className="cursor-pointer text-[20px] text-[#000000]">Z<span className="italic">ee</span>k</p>
             <span>
               <ProfileIcon />
             </span>
@@ -89,13 +89,13 @@ const Template = () => {
                   <span>
                     <CheckGreenIcon />
                   </span>
-                  <p className="text-[14px] text-[#090909]">Land Certificate</p>
+                  <p className="text-[14px] text-[#090909]">Two kegs of palmwine</p>
                 </div>
                 <div className="flex flex-row gap-2">
                   <span>
                     <CheckGreenIcon />
                   </span>
-                  <p className="text-[14px] text-[#090909]">Land Certificate</p>
+                  <p className="text-[14px] text-[#090909]">The Cap of a spineless man</p>
                 </div>
               </div>
             </div>

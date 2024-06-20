@@ -13,7 +13,7 @@ const Template = () => {
     <div className="flex flex-col min-h-screen">
     <div className="mx-auto flex xl:w-8/12 w-11/12 flex-col items-center justify-center gap-5 pt-12 flex-grow">
       <div className="mx-auto flex xl:w-6/12 w-10/12 flex-row justify-between">
-        <p>zkPassport</p>
+        <p className="text-[20px] text-[#000000]">Z<span className="italic">ee</span>k</p>
         <span>
           <ProfileIcon />
         </span>

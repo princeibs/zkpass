@@ -13,7 +13,7 @@ const Review = () => {
           <CheckGreyIconXl />
         </span>
         <div className="flex flex-col justify-center items-center mt-8">
-          <span className="xl:text-[20px] text-[18px] text-[#B5B5B5]">zkPassport</span>
+          <span className="xl:text-[20px] text-[18px] text-[#B5B5B5]">Z<span className="italic">ee</span>k</span>
           <div className="flex flex-col items-center">
             <p className="text-[24px] text-[#030303] xl:text-[36px] w-8/12 text-center">
               Your Land Ownership Verification is in Review
