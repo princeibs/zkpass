@@ -49,10 +49,10 @@ const Template = () => {
           <div className="flex flex-row items-center justify-between">
             <div className="mt-4 flex flex-col">
               <span className="text-[18px] text-[#000] xl:text-[24px]">
-                Verify Asset Ownership
+                KYC Solution for Commercial Bank
               </span>
               <p className="text-[12px] text-[#252C32] xl:text-[14px]">
-                Check if the verifier owns the Farmland.
+                KYC solution bank requires for their clients
               </p>
             </div>
             <div className="flex h-fit flex-row items-center gap-2 rounded-[12px] bg-[#F0F0F0] px-[18px] py-[4px] xl:px-[20px] xl:py-[11px]">
@@ -62,26 +62,13 @@ const Template = () => {
               <p className="text-[12px] xl:text-[14px]">2 Checks</p>
             </div>
           </div>
-          <div className="mt-4 flex w-11/12 text-[14px] font-normal -tracking-[5%] text-[#6D6D6D]">
-            <span>
-              Crafted in Figma, this kit features over thirty pre-designed
-              widgets that are ready to be customized to your liking. These
-              widgets cover a wide range of survey types and formats.
-              <br />
-              <br />
-              In addition, the free Figma resource also includes a robust design
-              system that serves as the foundation for the project. This ensures
-              that all the widgets are consistent and cohesive, making it easy
-              for you to create a polished and professional-looking survey in no
-              time.
-            </span>
-          </div>
+          <div className="mt-4 flex w-11/12 text-[14px] font-normal -tracking-[5%] text-[#6D6D6D]"></div>
 
           <div className="mt-12 flex w-full flex-col justify-between gap-8 xl:flex-row xl:gap-0">
             <div className="flex flex-col">
               <p>Verification steps</p>
               <p className="text-[12px] text-[#252C32]">
-                Check if the verifier owns the Farmland.
+                Check if the has valid identity
               </p>
               <div className="flex flex-col gap-4">
                 <div className="mt-8 flex flex-row gap-2">
@@ -95,15 +82,7 @@ const Template = () => {
                     <CheckGreenIcon />
                   </span>
                   <p className="text-[14px] text-[#090909]">
-                    Two kegs of palmwine
-                  </p>
-                </div>
-                <div className="flex flex-row gap-2">
-                  <span>
-                    <CheckGreenIcon />
-                  </span>
-                  <p className="text-[14px] text-[#090909]">
-                    The Cap of a spineless man
+                    Verify residence of individual
                   </p>
                 </div>
               </div>

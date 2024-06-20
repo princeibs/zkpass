@@ -1,5 +1,5 @@
 "use client";
-import React, {useState } from 'react';
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import Select from "../_components/select/select";
 import {
@@ -15,25 +15,24 @@ interface ISelectItem {
 }
 
 interface IDocumentItem {
-    id: string;
-    name: string;
-  }
+  id: string;
+  name: string;
+}
 
 interface IChainListItem {
-    id: string;
-    name: string;
-  }
-  
+  id: string;
+  name: string;
+}
 
-  const DOCUMENT_LIST: IDocumentItem[] = [
-    { id: "1", name: 'National ID' },
-    { id: "2", name: 'NIN' },
-    { id: "3", name: 'Passport' },
-  ];
+const DOCUMENT_LIST: IDocumentItem[] = [
+  { id: "1", name: "National ID" },
+  { id: "2", name: "NIN" },
+  { id: "3", name: "Passport" },
+];
 
 const CHAIN_LIST: IChainListItem[] = [
   {
-    id: '1',
+    id: "1",
     name: "Ethereum",
   },
   {
@@ -50,35 +49,45 @@ const Demo = () => {
   const router = useRouter();
   const [showDocuments, setShowDocuments] = useState(false);
   const [showLandTransaction, setShowLandTransaction] = useState(false);
-  const [documentList, setDocumentList] =  useState<ISelectItem | undefined>(undefined);
-  const [chainList, setChainList] = useState<ISelectItem | undefined>(undefined);
+  const [documentList, setDocumentList] = useState<ISelectItem | undefined>(
+    undefined,
+  );
+  const [chainList, setChainList] = useState<ISelectItem | undefined>(
+    undefined,
+  );
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex min-h-screen flex-col">
       <nav className="fixed h-8 w-full items-center bg-[#000]">
         <span className="mx-auto flex items-center justify-center py-1 text-center text-[14px] text-[#fff] ">
           This is a Demo Flow
         </span>
       </nav>
-      <div className="flex-grow flex flex-col items-center justify-center pb-1 pt-12">
-        <span className="text-[20px] text-[#7C7C7C]">Z<span className="italic">ee</span>k</span>
+      <div className="flex flex-grow flex-col items-center justify-center pb-1 pt-12">
+        <span className="text-[20px] text-[#7C7C7C]">
+          Z<span className="italic">ee</span>k
+        </span>
 
         <div className="mt-8 flex flex-col items-center">
-          <p className="xl:text-[24px] text-[18px] text-[#030303]">Koha has invited you to </p>
-          <p className="xl:text-[38px] text-[24px] text-[#000000]">Verify Farm Ownership </p>
-          <p className="xl:text-[14px] text-[12px] text-[#252C32]">
-            Check if the verifier owns the Farmland.
+          <p className="text-[18px] text-[#030303] xl:text-[24px]">
+            Adoh has invited you to{" "}
+          </p>
+          <p className="text-[24px] text-[#000000] xl:text-[38px]">
+            KYC Solution with commercial banks
+          </p>
+          <p className="text-[12px] text-[#252C32] xl:text-[14px]">
+            KYC solution for commercial banks
           </p>
         </div>
 
         <div className="mt-20 flex w-full flex-col items-center gap-2">
           <div
-            className="flex xl:w-4/12 w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff]"
+            className="flex w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff] xl:w-4/12"
             onClick={() => setShowDocuments(true)}
           >
             <div className="flex flex-row items-center gap-4 px-3 py-4">
               <CheckGreyIcon />
-              <p className="xl:text-[20px] text-[16px] text-[#909090]">
+              <p className="text-[16px] text-[#909090] xl:text-[20px]">
                 Provide identity documents
               </p>
             </div>
@@ -87,12 +96,12 @@ const Demo = () => {
             </span>
           </div>
           <div
-            className="flex xl:w-4/12 w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff]"
+            className="flex w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff] xl:w-4/12"
             onClick={() => setShowLandTransaction(true)}
           >
             <div className="flex flex-row items-center gap-4 px-3 py-4">
               <CheckGreyIcon />
-              <p className="xl:text-[20px] text-[16px] text-[#909090]">
+              <p className="text-[16px] text-[#909090] xl:text-[20px]">
                 Provide Land Transaction hash
               </p>
             </div>
@@ -100,19 +109,21 @@ const Demo = () => {
               <RightArrowIcon />
             </span>
           </div>
-          <div className="flex xl:w-4/12 w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff]">
+          <div className="flex w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff] xl:w-4/12">
             <div className="flex flex-row items-center gap-4 px-3 py-4">
               <CheckGreyIcon />
-              <p className="xl:text-[20px] text-[16px] text-[#909090]">Provide Map details</p>
+              <p className="text-[16px] text-[#909090] xl:text-[20px]">
+                Provide Map details
+              </p>
             </div>
             <span className="px-3">
               <RightArrowIcon />
             </span>
           </div>
-          <div className="flex xl:w-4/12 w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff]">
+          <div className="flex w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff] xl:w-4/12">
             <div className="flex flex-row items-center gap-4 px-3 py-4">
               <CheckGreyIcon />
-              <p className="xl:text-[20px] text-[16px] text-[#909090]">
+              <p className="text-[16px] text-[#909090] xl:text-[20px]">
                 Provide identity documents
               </p>
             </div>
@@ -122,7 +133,7 @@ const Demo = () => {
           </div>
         </div>
 
-        <div className="mt-20 flex xl:w-4/12 w-9/12 flex-col justify-center gap-6 text-center mb-20">
+        <div className="mb-20 mt-20 flex w-9/12 flex-col justify-center gap-6 text-center xl:w-4/12">
           <div>
             <span className="text-[12px] text-[#AAAAAA]">
               By submitting you confirm that I have read the Privacy Notice and
@@ -131,13 +142,16 @@ const Demo = () => {
               Personal Data.
             </span>
           </div>
-          <button className="mx-auto flex xl:w-4/12 w-7/12 justify-center rounded-[12px] bg-[#DFDFDF] px-8 py-3 text-[12px] text-[#fff]" onClick={() => router.push("/review")}>
+          <button
+            className="mx-auto flex w-7/12 justify-center rounded-[12px] bg-[#DFDFDF] px-8 py-3 text-[12px] text-[#fff] xl:w-4/12"
+            onClick={() => router.push("/review")}
+          >
             Use this template
           </button>
         </div>
       </div>
 
-      <footer className="w-full flex items-center justify-center py-4">
+      <footer className="flex w-full items-center justify-center py-4">
         <p className="text-[12px] text-[#BDBDBD]">powered by zkPass</p>
       </footer>
 
@@ -214,7 +228,9 @@ const Demo = () => {
               setSelected={setChainList}
             />
             <div className="mt-4 flex w-full flex-col gap-2">
-              <span className="text-[13px] text-[#454D54]">Transaction Hash</span>
+              <span className="text-[13px] text-[#454D54]">
+                Transaction Hash
+              </span>
               <input
                 type="text"
                 className="w-full border border-[#E0E0E0] bg-[#FFFFFF] p-3 outline-none"
