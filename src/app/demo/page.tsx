@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, {useState } from 'react';
 import { useRouter } from "next/navigation";
 import Select from "../_components/select/select";
 import {
@@ -14,26 +14,34 @@ interface ISelectItem {
   name: string;
 }
 
-const DOCUMENT_LIST = [
-  {
-    name: "National ID",
-  },
-  {
-    name: "NIN",
-  },
-  {
-    name: "Passport",
-  },
-];
+interface IDocumentItem {
+    id: string;
+    name: string;
+  }
 
-const CHAIN_LIST = [
+interface IChainListItem {
+    id: string;
+    name: string;
+  }
+  
+
+  const DOCUMENT_LIST: IDocumentItem[] = [
+    { id: "1", name: 'National ID' },
+    { id: "2", name: 'NIN' },
+    { id: "3", name: 'Passport' },
+  ];
+
+const CHAIN_LIST: IChainListItem[] = [
   {
+    id: '1',
     name: "Ethereum",
   },
   {
+    id: "2",
     name: "Solana",
   },
   {
+    id: "3",
     name: "BSC",
   },
 ];
@@ -42,14 +50,8 @@ const Demo = () => {
   const router = useRouter();
   const [showDocuments, setShowDocuments] = useState(false);
   const [showLandTransaction, setShowLandTransaction] = useState(false);
-  const [documentList, setDocumentList] = useState<ISelectItem>({
-    id: "",
-    name: "",
-  });
-  const [chainList, setChainList] = useState<ISelectItem>({
-    id: "",
-    name: "",
-  });
+  const [documentList, setDocumentList] =  useState<ISelectItem | undefined>(undefined);
+  const [chainList, setChainList] = useState<ISelectItem | undefined>(undefined);
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -130,7 +132,7 @@ const Demo = () => {
             </span>
           </div>
           <button className="mx-auto flex xl:w-4/12 w-7/12 justify-center rounded-[12px] bg-[#DFDFDF] px-8 py-3 text-[12px] text-[#fff]" onClick={() => router.push("/review")}>
-            Submit
+            Use this template
           </button>
         </div>
       </div>

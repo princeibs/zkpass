@@ -2,8 +2,9 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from 'next/navigation'; 
-import Uber from "../../assets/images/Dashboard/image 4.svg";
-import Bolt from "../../assets/images/Dashboard/Stack__Container.svg";
+import Bolt from "../../assets/images/bolt.svg";
+import Uber from "../../assets/images/uber.svg";
+import BoltUber from "../../assets/images/Dashboard/Group 20468.png"
 import { FlagIcon, ProfileIcon, ShowMoreIcon } from "../../assets/icons/icons";
 import { KYC_TEMPLATE } from "../_components/data/data";
 
@@ -60,14 +61,15 @@ const Template = () => {
                 <p className="text-[14px] text-[#5B6165]">{kyc.info}</p>
               </div>
             </div>
-            <div className="relative flex flex-row justify-between items-center mt-4">
-              <div className="flex flex-row items-center">
-                <div className="relative z-10">
+            <div className="relative flex flex-row justify-between items-center mt-8">
+              <div className="flex ">
+                    <Image src={BoltUber} alt="boltnuber"></Image>
+                {/* <div className="relative z-10">
                   <Image src={Uber} alt="Uber" className="relative z-20" />
                 </div>
                 <div className="relative z-0 -ml-3">
-                  <Image src={Bolt} alt="Bolt" className="relative z-10" />
-                </div>
+                  <Image src={Bolt} alt="Bolt" className="relative z-10" /> 
+                </div> */}
               </div>
               <div className="flex flex-row gap-2 items-center">
                 <span>

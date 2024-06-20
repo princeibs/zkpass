@@ -1,4 +1,4 @@
-import { CheckGreyIconXl, HurrayIcon } from "~/assets/icons/icons";
+import {HurrayIcon } from "~/assets/icons/icons";
 
 const Review = () => {
   return (

@@ -1,18 +1,12 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Uber from "../../assets/images/Dashboard/image 4.svg";
-import Bolt from "../../assets/images/Dashboard/Stack__Container.svg";
 import {
   BackArrowIcon,
-  CheckGreyIcon,
   CheckGreenIcon,
   FlagIcon,
   ProfileIcon,
-  ShowMoreIcon,
 } from "../../../assets/icons/icons";
-import { KYC_TEMPLATE } from "../../_components/data/data";
 
 const Template = () => {
   const router = useRouter();

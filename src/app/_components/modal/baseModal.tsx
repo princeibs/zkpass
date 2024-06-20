@@ -1,11 +1,11 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from 'react'
+import { Fragment} from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 
 interface ModalProps {
   open: boolean;
-  setOpen: any;
-  children : any;
+  setOpen: (value: boolean) => void;
+  children: React.ReactNode;
   className?: string;
 }
 

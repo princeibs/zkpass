@@ -1,24 +1,29 @@
-/* This example requires Tailwind CSS v2.0+ */
+import React, {  Dispatch, SetStateAction } from 'react';
 import { Listbox, Transition } from '@headlessui/react';
 
 import { Fragment } from 'react';
 import { DropdownIcon } from '~/assets/icons/icons';
 
+
+interface ISelectItem {
+  id: string;
+  name: string;
+}
 interface selectProps {
   label?: string;
-  selected: any;
-  setSelected: any;
-  data: any;
+  selected: ISelectItem | undefined;
+  setSelected: Dispatch<SetStateAction<ISelectItem | undefined>>;
+  data: ISelectItem[];
   name?: string;
   height?: string;
   placeholder?: string;
   borderStyle?: string;
   backgroundColor?: string;
   className?: string;
-  onChange?: any;
+  onChange?: (item: ISelectItem | undefined) => void;
 }
 
-function classNames(...classes: any) {
+function classNames(...classes: (string | undefined | null | false | number)[]) {
   return classes.filter(Boolean).join(' ');
 }
 
@@ -29,11 +34,7 @@ export default function Select({
   data,
   name,
   height,
-  placeholder,
-  borderStyle,
-  className,
   backgroundColor,
-  onChange
 }: selectProps) {
   // const onChange = ({ name, id }: { name: string, id: string }) => {
   //    setSelected({ name, id })
@@ -61,7 +62,7 @@ export default function Select({
             >
               {selected?.name !== "" ? (
                 <span className="block truncate capitalize off-white-text text-sm">
-                  {selected?.name || name}
+                  {selected?.name ?? name}
                 </span>
               ) : (
                 <span className="text-[13px] text-[#454D54] capitalize">{name}</span>
@@ -83,7 +84,7 @@ export default function Select({
                   open && ""
                 }`}
               >
-                {data?.map((person: any, index: number) => (
+                {data?.map((person: ISelectItem, index: number) => (
                   <Listbox.Option
                     key={index}
                     className={({ active }) =>
@@ -95,7 +96,7 @@ export default function Select({
                     onClick={() => setSelected(person)}
                     value={person}
                   >
-                    {({ selected, active }) => (
+                    {({ selected }) => (
                       <>
                         <span
                           className={classNames(
