@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from "react";
-import {HurrayIcon } from "~/assets/icons/icons";
+import { HurrayIcon } from "~/assets/icons/icons";
 
 const Review = () => {
   const [landOwnershipVerificationData, setLandOwnershipVerificationData] = useState(null);

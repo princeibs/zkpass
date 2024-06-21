@@ -7,8 +7,8 @@
     {
       "host": "http://localhost:3000",
       "intercept": {
-        "url": "/validate",
-        "method": "GET"
+        "url": "/api/validate",
+        "method": "POST"
       },
       "nullifier": "data|id",
       "assert": [
