@@ -12,6 +12,6 @@ export const KYC_TEMPLATE = [
   {
     category: "Real World Asset",
     kyc: "Verify Real Estate",
-    info: "Check if the verifier owns a real estate property",
+    info: "Check if the verifier owns real estate ",
   },
 ];

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Select from "../_components/select/select";
@@ -46,14 +46,39 @@ const Demo = () => {
   const router = useRouter();
   const [showDocuments, setShowDocuments] = useState(false);
   const [showLandTransaction, setShowLandTransaction] = useState(false);
+  const [showMapDetails, setShowMapDetails] = useState(false);
+  const [showPassport, setShowPassport] = useState(false);
   const [documentList, setDocumentList] = useState<ISelectItem | undefined>(undefined);
   const [chainList, setChainList] = useState<ISelectItem | undefined>(undefined);
 
+  // state to manage after upload function
   const [idAdded, setIdAdded] = useState(false);
-  const [showIdToaster, setShowIdToaster] = useState(false);
-
   const [landAdded, setLandAdded] = useState(false);
+  const [mapAdded, setMapAdded] = useState(false);
+  const [passportAdded,setPassportAdded] = useState(false);
+
+  // Toasters 
+  const [showIdToaster, setShowIdToaster] = useState(false);
   const [showLandToaster, setShowLandToaster] = useState(false);
+  const[showMapToaster, setShowMapToaster] = useState(false);
+  const[showPassportToaster, setShowPassportToaster] = useState(false);
+
+  // Function to check if both ID and Land transaction are completed
+  const isUploadButtonEnabled = idAdded && landAdded;
+
+  // Handle ID document modal close
+  const handleIdModalClose = () => {
+    setShowDocuments(false);
+  };
+
+  // Handle Land transaction modal close
+  const handleLandModalClose = () => {
+    setShowLandTransaction(false);
+  };
+
+  const handleMapModalClose = () => {
+    setShowMapDetails(false);
+  };
 
   useEffect(() => {
     if (showIdToaster) {
@@ -70,13 +95,33 @@ const Demo = () => {
         setShowLandToaster(false);
       }, 4000);
       return () => clearTimeout(timer);
-    }
+    } 
   }, [showLandToaster]);
+
+
+  useEffect(() => {
+    if (showMapToaster) {
+      const timer = setTimeout(() => {
+        setShowMapToaster(false);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [showMapToaster]);
+
+
+  useEffect(() => {
+    if (showPassportToaster) {
+      const timer = setTimeout(() => {
+        setShowPassportToaster(false);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [showPassportToaster]);
 
   return (
     <div className="flex min-h-screen flex-col">
       <nav className="fixed h-8 w-full items-center bg-[#000]">
-        <span className="mx-auto flex items-center justify-center py-1 text-center text-[14px] text-[#fff] ">
+        <span className="mx-auto flex items-center justify-center py-1 text-center text-[14px] text-[#fff]">
           This is a Demo Flow
         </span>
       </nav>
@@ -96,7 +141,7 @@ const Demo = () => {
 
         <div className="mt-20 flex w-full flex-col items-center gap-2">
           <div
-            className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border  ${idAdded ? 'border-[#01E17B] cursor-not-allowed rounded-[12px]' : 'border-[#E4E4E4]'} bg-[#fff] xl:w-4/12`}
+            className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border ${idAdded ? 'border-[#01E17B] cursor-not-allowed rounded-[12px]' : 'border-[#E4E4E4]'} bg-[#fff] xl:w-4/12`}
             onClick={() => {
               if (!idAdded) {
                 setShowDocuments(true);
@@ -104,7 +149,7 @@ const Demo = () => {
             }}
           >
             <div className="flex flex-row items-center gap-4 px-3 py-4">
-            {idAdded ?  <CheckGreenIcon /> :  <CheckGreyIcon />}
+              {idAdded ? <CheckGreenIcon /> : <CheckGreyIcon />}
               <p className="text-[16px] text-[#909090] xl:text-[20px]">
                 Provide identity documents
               </p>
@@ -122,7 +167,7 @@ const Demo = () => {
             }}
           >
             <div className="flex flex-row items-center gap-4 px-3 py-4">
-            {landAdded ?  <CheckGreenIcon /> :  <CheckGreyIcon />}
+              {landAdded ? <CheckGreenIcon /> : <CheckGreyIcon />}
               <p className="text-[16px] text-[#909090] xl:text-[20px]">
                 Provide Land Transaction hash
               </p>
@@ -131,9 +176,16 @@ const Demo = () => {
               <RightArrowIcon />
             </span>
           </div>
-          <div className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff] xl:w-4/12`}>
+
+
+          <div className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border ${mapAdded ? 'border-[#01E17B] cursor-not-allowed rounded-[12px]' : 'border-[#E4E4E4]'} bg-[#fff] xl:w-4/12`}
+            onClick={() => {
+              if (!mapAdded) {
+                setShowMapDetails(true);
+              }
+            }}>
             <div className="flex flex-row items-center gap-4 px-3 py-4">
-              <CheckGreyIcon />
+            {mapAdded ? <CheckGreenIcon /> : <CheckGreyIcon />}
               <p className="text-[16px] text-[#909090] xl:text-[20px]">
                 Provide Map details
               </p>
@@ -142,18 +194,19 @@ const Demo = () => {
               <RightArrowIcon />
             </span>
           </div>
+
           <div className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff] xl:w-4/12`}>
             <div className="flex flex-row items-center gap-4 px-3 py-4">
-              <CheckGreyIcon />
+            {passportAdded ? <CheckGreenIcon /> : <CheckGreyIcon />}
               <p className="text-[16px] text-[#909090] xl:text-[20px]">
-                Provide identity documents
+                Provide Passport
               </p>
             </div>
             <span className="px-3">
               <RightArrowIcon />
             </span>
           </div>
-         
+
         </div>
 
         <div className="mb-20 mt-20 flex w-9/12 flex-col justify-center gap-6 text-center xl:w-4/12">
@@ -168,8 +221,9 @@ const Demo = () => {
 
           {/* <a href="">Use this template</a> */}
           <button
-            className="mx-auto flex w-7/12 justify-center rounded-[12px] bg-[#000] px-4 mt-3 py-3 text-[12px] text-[#fff] xl:w-5/12"
+            className={`mx-auto flex w-7/12 justify-center rounded-[12px] bg-[#000] px-4 mt-3 py-3 text-[12px] text-[#fff] xl:w-5/12 ${!isUploadButtonEnabled ? 'opacity-50 cursor-not-allowed' : ''}`}
             onClick={() => router.push("/review")}
+            disabled={!isUploadButtonEnabled} // Disable button based on condition
           >
             Upload your documents
           </button>
@@ -190,7 +244,7 @@ const Demo = () => {
             <p className="text-[16px] text-[#191716]">Identity Documents</p>
             <span
               className="absolute right-[-20px] cursor-pointer px-8"
-              onClick={() => setShowDocuments(false)}
+              onClick={handleIdModalClose}
             >
               <ModalCloseIcon />
             </span>
@@ -217,7 +271,7 @@ const Demo = () => {
             </div>
 
             <div className="mt-8">
-              <button className="w-full rounded-[10px] bg-[#000] p-4 text-[#fff]" onClick={() => {setIdAdded(true); setShowIdToaster(true); setShowDocuments(false);}}>
+              <button className="w-full rounded-[10px] bg-[#000] p-4 text-[#fff]" onClick={() => { setIdAdded(true); setShowIdToaster(true); setShowDocuments(false); }}>
                 Add
               </button>
             </div>
@@ -235,7 +289,7 @@ const Demo = () => {
             <p className="text-[16px] text-[#191716]">Land Details</p>
             <span
               className="absolute right-[-20px] cursor-pointer px-8"
-              onClick={() => setShowLandTransaction(false)}
+              onClick={handleLandModalClose}
             >
               <ModalCloseIcon />
             </span>
@@ -263,13 +317,105 @@ const Demo = () => {
             </div>
 
             <div className="mt-8">
-              <button className="w-full rounded-[10px] bg-[#000] p-4 text-[#fff]" onClick={() => {setLandAdded(true); setShowLandToaster(true); setShowLandTransaction(false);}}>
+              <button className="w-full rounded-[10px] bg-[#000] p-4 text-[#fff]" onClick={() => { setLandAdded(true); setShowLandToaster(true); setShowLandTransaction(false); }}>
                 Add
               </button>
             </div>
           </div>
         </div>
       </BaseModal>
+
+      <BaseModal
+        open={showMapDetails}
+        setOpen={setShowMapDetails}
+        className="bottom-0 top-0 mx-auto my-auto flex items-center justify-center px-0"
+      >
+        <div className="flex w-[400px] flex-col gap-4 pb-4">
+          <div className="borber-b relative flex flex-row items-center justify-center">
+            <p className="text-[16px] text-[#191716]">Map Details</p>
+            <span
+              className="absolute right-[-20px] cursor-pointer px-8"
+              onClick={handleMapModalClose}
+            >
+              <ModalCloseIcon />
+            </span>
+          </div>
+          <span className="w-full border-b border-[#E4ECF7] py-1"></span>
+          <div className="flex flex-col gap-2 px-4">
+            <span className="text-[13px] text-[#454D54]">Address</span>
+            <Select
+              placeholder="Select Chain"
+              className="bg-[#fff]"
+              borderStyle="bg-[#34322D] rounded-[8px]"
+              name="Chain"
+              data={CHAIN_LIST}
+              selected={chainList}
+              setSelected={setChainList}
+            />
+            <div className="mt-4 flex w-full flex-col gap-2">
+              <span className="text-[13px] text-[#454D54]">
+                Map Details
+              </span>
+              <input
+                type="text"
+                className="w-full border border-[#E0E0E0] bg-[#FFFFFF] p-3 outline-none"
+              />
+            </div>
+
+            <div className="mt-8">
+              <button className="w-full rounded-[10px] bg-[#000] p-4 text-[#fff]" onClick={() => { setMapAdded(true); setShowMapToaster(true); setShowMapDetails(false); }}>
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </BaseModal>
+
+      {/* <BaseModal
+        open={showMapDetails}
+        setOpen={setShowMapDetails}
+        className="bottom-0 top-0 mx-auto my-auto flex items-center justify-center px-0"
+      >
+        <div className="flex w-[400px] flex-col gap-4 pb-4">
+          <div className="borber-b relative flex flex-row items-center justify-center">
+            <p className="text-[16px] text-[#191716]">Map Details</p>
+            <span
+              className="absolute right-[-20px] cursor-pointer px-8"
+              onClick={handleLandModalClose}
+            >
+              <ModalCloseIcon />
+            </span>
+          </div>
+          <span className="w-full border-b border-[#E4ECF7] py-1"></span>
+          <div className="flex flex-col gap-2 px-4">
+            <span className="text-[13px] text-[#454D54]">Address</span>
+            <Select
+              placeholder="Select Chain"
+              className="bg-[#fff]"
+              borderStyle="bg-[#34322D] rounded-[8px]"
+              name="Chain"
+              data={CHAIN_LIST}
+              selected={chainList}
+              setSelected={setChainList}
+            />
+            <div className="mt-4 flex w-full flex-col gap-2">
+              <span className="text-[13px] text-[#454D54]">
+                Transaction Hash
+              </span>
+              <input
+                type="text"
+                className="w-full border border-[#E0E0E0] bg-[#FFFFFF] p-3 outline-none"
+              />
+            </div>
+
+            <div className="mt-8">
+              <button className="w-full rounded-[10px] bg-[#000] p-4 text-[#fff]" onClick={() => { setLandAdded(true); setShowLandToaster(true); setShowLandTransaction(false); }}>
+                Add
+              </button>
+            </div>
+          </div>
+        </div>
+      </BaseModal> */}
 
       <SuccessToaster
         show={showIdToaster}
@@ -281,6 +427,13 @@ const Demo = () => {
       <SuccessToaster
         show={showLandToaster}
         setShow={setShowLandToaster}
+        heading="Document provided"
+        body="Your Document has been submitted!"
+      />
+
+      <SuccessToaster
+        show={showMapToaster}
+        setShow={setShowMapToaster}
         heading="Document provided"
         body="Your Document has been submitted!"
       />

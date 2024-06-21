@@ -11,7 +11,7 @@ const Template = () => {
   return (
     <div className="flex min-h-screen flex-col">
       <div className="mx-auto flex w-9/12 flex-grow flex-col items-center justify-start gap-5 pt-12 xl:w-7/12">
-      <div className="w-full">
+        <div className="w-full">
           <div className="mx-auto flex w-full flex-row justify-between">
             <p
               onClick={() => router.push(`/template`)}
@@ -38,8 +38,9 @@ const Template = () => {
 
         <div className="mt-10 flex flex-col items-center">
           <p className="text-[24px] text-[#000000]">Choose a KYC Template</p>
-          <p className="text-[12px] text-[#A7A7A7] text-center">
-            Start your verification process with carefully <br /> curated RWA KYC template
+          <p className="text-center text-[12px] text-[#A7A7A7]">
+            Start your verification process with carefully <br /> curated RWA
+            KYC template
           </p>
         </div>
 
@@ -71,14 +72,20 @@ const Template = () => {
                 </div>
               </div>
               <div className="relative mt-8 flex flex-row items-center justify-between">
-                <div className="flex">
-                  <Image src={FlagsIcon} alt="flags" className="w-[30px]"></Image>
+                <div className="flex items-center">
+                  <Image
+                    src={FlagsIcon}
+                    alt="flags"
+                    width={30}
+                    height={30}
+                    className="object-contain"
+                  />
                 </div>
                 <div className="flex flex-row items-center gap-2">
                   <span>
                     <FlagIcon />
                   </span>
-                  <span className="text-[12px] text-[#6E7C87]">2 checks</span>
+                  <span className="text-sm text-gray-600">2 checks</span>
                 </div>
               </div>
             </div>

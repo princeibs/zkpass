@@ -46,7 +46,7 @@ const Template = () => {
             <BackArrowIcon />
             <span className="text-[14px] text-[#454D54]">Back</span>
           </div>
-          <div className="flex flex-row items-center justify-between">
+          <div className="flex xl:flex-row flex-col xl:items-center xl:justify-between xl:gap-0 gap-4">
             <div className="mt-4 flex flex-col">
               <span className="text-[18px] text-[#000] xl:text-[24px]">
                 Verify Land Ownership
@@ -55,7 +55,7 @@ const Template = () => {
                 Check if the verifier owns a land property
               </p>
             </div>
-            <div className="flex h-fit flex-row items-center gap-2 rounded-[12px] bg-[#F0F0F0] px-[18px] py-[4px] xl:px-[20px] xl:py-[11px]">
+            <div className="flex xl:w-2/12 justify-center w-6/12 h-fit flex-row items-center gap-2 rounded-[12px] bg-[#F0F0F0] px-[18px] py-[8px] xl:px-[2px] xl:py-[11px]">
               <span>
                 <FlagIcon />
               </span>
