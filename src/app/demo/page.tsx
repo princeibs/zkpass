@@ -96,7 +96,7 @@ const Demo = () => {
 
         <div className="mt-20 flex w-full flex-col items-center gap-2">
           <div
-            className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border ${idAdded ? 'border-[#01E17B] cursor-not-allowed' : 'border-[#E4E4E4]'} bg-[#fff] xl:w-4/12`}
+            className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border  ${idAdded ? 'border-[#01E17B] cursor-not-allowed rounded-[12px]' : 'border-[#E4E4E4]'} bg-[#fff] xl:w-4/12`}
             onClick={() => {
               if (!idAdded) {
                 setShowDocuments(true);
@@ -114,7 +114,7 @@ const Demo = () => {
             </span>
           </div>
           <div
-            className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border ${landAdded ? 'border-[#01E17B] cursor-not-allowed' : 'border-[#E4E4E4]'} bg-[#fff] xl:w-4/12`}
+            className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border ${landAdded ? 'border-[#01E17B] cursor-not-allowed rounded-[12px]' : 'border-[#E4E4E4]'} bg-[#fff] xl:w-4/12`}
             onClick={() => {
               if (!landAdded) {
                 setShowLandTransaction(true);
@@ -153,12 +153,7 @@ const Demo = () => {
               <RightArrowIcon />
             </span>
           </div>
-          <button
-            className="mx-auto flex w-7/12 justify-center rounded-[12px] bg-[#000] px-4 mt-3 py-3 text-[12px] text-[#fff] xl:w-2/12"
-            onClick={() => router.push("/review")}
-          >
-            Upload your documents
-          </button>
+         
         </div>
 
         <div className="mb-20 mt-20 flex w-9/12 flex-col justify-center gap-6 text-center xl:w-4/12">
@@ -171,7 +166,13 @@ const Demo = () => {
             </span>
           </div>
 
-          <a href="">Use this template</a>
+          {/* <a href="">Use this template</a> */}
+          <button
+            className="mx-auto flex w-7/12 justify-center rounded-[12px] bg-[#000] px-4 mt-3 py-3 text-[12px] text-[#fff] xl:w-5/12"
+            onClick={() => router.push("/review")}
+          >
+            Upload your documents
+          </button>
         </div>
       </div>
 

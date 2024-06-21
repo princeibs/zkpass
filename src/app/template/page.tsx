@@ -2,7 +2,7 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import BoltUber from "../../assets/images/Dashboard/Group 20468.png";
+import FlagsIcon from "../../assets/images/flagss.png";
 import { FlagIcon, ProfileIcon, ShowMoreIcon } from "../../assets/icons/icons";
 import { KYC_TEMPLATE } from "../_components/data/data";
 
@@ -10,31 +10,36 @@ const Template = () => {
   const router = useRouter();
   return (
     <div className="flex min-h-screen flex-col">
-      <div className="mx-auto flex w-11/12 flex-grow flex-col items-center justify-center gap-5 pt-12 xl:w-8/12">
-        <div className="mx-auto flex w-10/12 flex-row justify-between xl:w-6/12">
-          <p className="text-[20px] text-[#000000]">
-            Z<span className="italic">ee</span>k
-          </p>
-          <span>
-            <ProfileIcon />
-          </span>
-        </div>
-        <div className="mt-8 flex flex-row items-center gap-3">
-          <span className="rounded-[40px] bg-[#000] px-4 py-2 text-[#fff]">
-            1
-          </span>
-          <span className="rounded-[40px] bg-[#F0F0F0] px-4 py-2 text-[#000]">
-            2
-          </span>
-          <span className="rounded-[40px] bg-[#F0F0F0] px-4 py-2 text-[#000]">
-            3
-          </span>
+      <div className="mx-auto flex w-9/12 flex-grow flex-col items-center justify-start gap-5 pt-12 xl:w-7/12">
+      <div className="w-full">
+          <div className="mx-auto flex w-full flex-row justify-between">
+            <p
+              onClick={() => router.push(`/template`)}
+              className="cursor-pointer text-[20px] text-[#000000]"
+            >
+              Z<span className="italic">ee</span>k
+            </p>
+            <span>
+              <ProfileIcon />
+            </span>
+          </div>
+          <div className="mt-8 flex flex-row items-center justify-center gap-3">
+            <span className="rounded-[40px] bg-[#F0F0F0] px-4 py-2 text-[#000]">
+              1
+            </span>
+            <span className="rounded-[40px] bg-[#000] px-4 py-2 text-[#fff]">
+              2
+            </span>
+            <span className="rounded-[40px] bg-[#F0F0F0] px-4 py-2 text-[#000]">
+              3
+            </span>
+          </div>
         </div>
 
         <div className="mt-10 flex flex-col items-center">
           <p className="text-[24px] text-[#000000]">Choose a KYC Template</p>
-          <p className="text-[12px] text-[#A7A7A7]">
-            Verify stuffs without f*cking up privacy
+          <p className="text-[12px] text-[#A7A7A7] text-center">
+            Start your verification process with carefully <br /> curated RWA KYC template
           </p>
         </div>
 
@@ -66,14 +71,8 @@ const Template = () => {
                 </div>
               </div>
               <div className="relative mt-8 flex flex-row items-center justify-between">
-                <div className="flex ">
-                  <Image src={BoltUber} alt="boltnuber"></Image>
-                  {/* <div className="relative z-10">
-                  <Image src={Uber} alt="Uber" className="relative z-20" />
-                </div>
-                <div className="relative z-0 -ml-3">
-                  <Image src={Bolt} alt="Bolt" className="relative z-10" /> 
-                </div> */}
+                <div className="flex">
+                  <Image src={FlagsIcon} alt="flags" className="w-[30px]"></Image>
                 </div>
                 <div className="flex flex-row items-center gap-2">
                   <span>

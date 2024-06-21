@@ -38,7 +38,7 @@ const Template = () => {
           </div>
         </div>
 
-        <div className="px- ml-[4%] mt-12 flex w-full flex-col justify-center gap-3">
+        <div className="px- ml-[4%] mt-12 flex w-10/12 flex-col justify-center gap-3">
           <div
             className="flex cursor-pointer flex-row items-center gap-3"
             onClick={() => router.back()}
@@ -49,10 +49,10 @@ const Template = () => {
           <div className="flex flex-row items-center justify-between">
             <div className="mt-4 flex flex-col">
               <span className="text-[18px] text-[#000] xl:text-[24px]">
-                KYC Solution for Commercial Bank
+                Verify Land Ownership
               </span>
               <p className="text-[12px] text-[#252C32] xl:text-[14px]">
-                KYC solution bank requires for their clients
+                Check if the verifier owns a land property
               </p>
             </div>
             <div className="flex h-fit flex-row items-center gap-2 rounded-[12px] bg-[#F0F0F0] px-[18px] py-[4px] xl:px-[20px] xl:py-[11px]">
@@ -62,7 +62,15 @@ const Template = () => {
               <p className="text-[12px] xl:text-[14px]">2 Checks</p>
             </div>
           </div>
-          <div className="mt-4 flex w-11/12 text-[14px] font-normal -tracking-[5%] text-[#6D6D6D]"></div>
+          <div className="mt-4 flex w-11/12 text-[14px] font-normal -tracking-[5%] text-[#6D6D6D]"> <span>
+                To ensure the security and authenticity of user
+                information, &quot;Verify Land Ownership&quot; feature requires users to
+                submit official documentation proving their ownership of the
+                specified property. <br /> <br />
+                This verification process helps prevent fraud and confirms that the land details provided are accurate and legitimate. <br /><br />
+
+                The verification process is completed after the user uses the transgate extension (a privacy preserving process) to securely verify the ownership of their credentials.
+              </span></div>
 
           <div className="mt-12 flex w-full flex-col justify-between gap-8 xl:flex-row xl:gap-0">
             <div className="flex flex-col">
