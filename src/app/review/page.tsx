@@ -1,21 +1,41 @@
 'use client'
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import { HurrayIcon } from "~/assets/icons/icons";
 import { api } from '~/trpc/react'
 
 
 const Review = () => {
-  const [landOwnershipVerificationData, setLandOwnershipVerificationData] = useState(null);
-  const { data } = api.post.validate.useQuery();
+  // const { data, error } = api.post.validate.useQuery();
+  
+  // if(error || !data){
+  //   return <div>Error</div>
+  // }
+  
+  // const [landOwnershipVerificationData, setLandOwnershipVerificationData] = useState(null);
 
-  useEffect(() => {
+  // useEffect(() => {
+  //   fetch("https://zkapi-production.up.railway.app/person")
+  //     .then((response) => response.json())
+  //     .then((data) => setLandOwnershipVerificationData(data));
+  // }, []);
+
+  // if(!landOwnershipVerificationData){
+  //   return <div>Loading...</div>
+  // }
+
+  const fetchData = () => {
     fetch("https://zkapi-production.up.railway.app/person")
       .then((response) => response.json())
-      .then((data) => setLandOwnershipVerificationData(data));
-  }, []);
+      // .then((data) => setLandOwnershipVerificationData(data));
 
-  console.log(data, landOwnershipVerificationData);
+  };
+
+  // if (error || !data) {
+  //   return <div>Error</div>;
+  // }
+
+  // console.log(data, landOwnershipVerificationData);
 
   return (
     <div className="flex flex-col h-screen">
@@ -24,6 +44,7 @@ const Review = () => {
           This is a Demo Flow
         </span>
       </nav>
+
       <div className="flex-grow flex flex-col gap-8 items-center justify-center pb-1 pt-10">
         <span>
           <HurrayIcon />
@@ -42,6 +63,10 @@ const Review = () => {
           </div>
         </div>
       </div>
+
+      <button onClick={() => fetchData()}>Load Land Ownership Data</button>
+
+
       <footer className="w-full flex items-center justify-center py-4">
         <p className="text-[12px] text-[#BDBDBD]">powered by zkPass</p>
       </footer>

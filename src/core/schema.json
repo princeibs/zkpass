@@ -5,9 +5,9 @@
   "breakWall": true,
   "APIs": [
     {
-      "host": "localhost:3000",
+      "host": "zkapi-production.up.railway.app/person",
       "intercept": {
-        "url": "api/validate",
+        "url": "person",
         "method": "GET"
       },
       "nullifier": "data|id",
