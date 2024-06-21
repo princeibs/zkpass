@@ -16,11 +16,12 @@ const Review = () => {
           <span className="xl:text-[20px] text-[18px] text-[#B5B5B5]">Z<span className="italic">ee</span>k</span>
           <div className="flex flex-col items-center">
             <p className="text-[24px] text-[#030303] xl:text-[36px] w-8/12 text-center">
-              Your Land Ownership Verification is in Review
+              Your Land Ownership Verification has been validated
             </p>
-            <p className="text-[12px] text-[#252C32] xl:text-[14px] mt-2">
-              Check if the verifier owns the Farmland.
+            <p className="text-[12px] text-[#896C42] xl:text-[14px] mt-2">
+              Continue with Zkpass Transgate to verify ownership onchain
             </p>
+            {/* <a href="" className="text-[#896C42] mt-2"></a> */}
             <p className="text-[12px] text-[#888888] mt-8">Redirecting in 10s</p>
           </div>
         </div>
