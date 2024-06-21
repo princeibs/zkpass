@@ -2,9 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { HurrayIcon } from "~/assets/icons/icons";
+import { api } from '~/trpc/react'
+
 
 const Review = () => {
   const [landOwnershipVerificationData, setLandOwnershipVerificationData] = useState(null);
+  const { data } = api.post.validate.useQuery();
 
   useEffect(() => {
     fetch("/api/validate")
@@ -12,7 +15,7 @@ const Review = () => {
       .then((data) => setLandOwnershipVerificationData(data));
   }, []);
 
-  console.log(landOwnershipVerificationData);
+  console.log(data, landOwnershipVerificationData);
 
   return (
     <div className="flex flex-col h-screen">
