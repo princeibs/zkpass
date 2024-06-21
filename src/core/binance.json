@@ -1,0 +1,31 @@
+{
+  "category": "Legal Identity",
+  "issuer": "Binance",
+  "desc": "A global cryptocurrency exchange facilitating trading of a diverse array of digital currencies.",
+  "website": "http://localhost:3000/review",
+  "breakWall": true,
+  "APIs": [
+    {
+      "host": "localhost:3000",
+      "intercept": {
+        "url": "api/validate",
+        "method": "POST"
+      },
+      "nullifier": "data|userId",
+      "assert": [
+        {
+          "key": "data|level",
+          "value": "2",
+          "operation": ">="
+        }
+      ]
+    }
+  ],
+  "HRCondition": [
+    "Need to be binance Level 2"
+  ],
+  "tips": {
+    "message": "When you successfully log in, please click the 'Start' button to initiate the verification process."
+  },
+  "id": "0x5a2d5429967b4516b85753ad14fbe88a"
+}

@@ -1,11 +1,11 @@
 {
   "issuer": "GhanaLandServices",
   "desc": "A verification service that ensures the authenticity of land ownership and human identity for farmland operations.",
-  "website": "http://localhost:3000/review",
+  "website": "https://zeekay.vercel.app/review",
   "breakWall": true,
   "APIs": [
     {
-      "host": "localhost:3000",
+      "host": "zeekay.vercel.app",
       "intercept": {
         "url": "api/validate",
         "method": "GET"
