@@ -2,8 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Bolt from "../../assets/images/bolt.svg";
-import Uber from "../../assets/images/uber.svg";
 import BoltUber from "../../assets/images/Dashboard/Group 20468.png";
 import { FlagIcon, ProfileIcon, ShowMoreIcon } from "../../assets/icons/icons";
 import { KYC_TEMPLATE } from "../_components/data/data";

@@ -1,13 +1,10 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Select from "../_components/select/select";
-import {
-  CheckGreyIcon,
-  ModalCloseIcon,
-  RightArrowIcon,
-} from "~/assets/icons/icons";
+import { CheckGreenIcon, CheckGreyIcon, ModalCloseIcon, RightArrowIcon } from "~/assets/icons/icons";
 import BaseModal from "../_components/modal/baseModal";
+import SuccessToaster from "../_components/toaster/success";
 
 interface ISelectItem {
   id: string;
@@ -49,12 +46,32 @@ const Demo = () => {
   const router = useRouter();
   const [showDocuments, setShowDocuments] = useState(false);
   const [showLandTransaction, setShowLandTransaction] = useState(false);
-  const [documentList, setDocumentList] = useState<ISelectItem | undefined>(
-    undefined,
-  );
-  const [chainList, setChainList] = useState<ISelectItem | undefined>(
-    undefined,
-  );
+  const [documentList, setDocumentList] = useState<ISelectItem | undefined>(undefined);
+  const [chainList, setChainList] = useState<ISelectItem | undefined>(undefined);
+
+  const [idAdded, setIdAdded] = useState(false);
+  const [showIdToaster, setShowIdToaster] = useState(false);
+
+  const [landAdded, setLandAdded] = useState(false);
+  const [showLandToaster, setShowLandToaster] = useState(false);
+
+  useEffect(() => {
+    if (showIdToaster) {
+      const timer = setTimeout(() => {
+        setShowIdToaster(false);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [showIdToaster]);
+
+  useEffect(() => {
+    if (showLandToaster) {
+      const timer = setTimeout(() => {
+        setShowLandToaster(false);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
+  }, [showLandToaster]);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -70,23 +87,24 @@ const Demo = () => {
 
         <div className="mt-8 flex flex-col items-center">
           <p className="text-[18px] text-[#030303] xl:text-[24px]">
-            Adoh has invited you to{" "}
+            Phoenix Real World Asset has invited you to
           </p>
-          <p className="text-[24px] text-[#000000] xl:text-[38px]">
-            KYC Solution with commercial banks
-          </p>
-          <p className="text-[12px] text-[#252C32] xl:text-[14px]">
-            KYC solution for commercial banks
+          <p className="text-[18px] text-[#030303] xl:text-[24px]">
+            verify your asset
           </p>
         </div>
 
         <div className="mt-20 flex w-full flex-col items-center gap-2">
           <div
-            className="flex w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff] xl:w-4/12"
-            onClick={() => setShowDocuments(true)}
+            className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border ${idAdded ? 'border-[#01E17B] cursor-not-allowed' : 'border-[#E4E4E4]'} bg-[#fff] xl:w-4/12`}
+            onClick={() => {
+              if (!idAdded) {
+                setShowDocuments(true);
+              }
+            }}
           >
             <div className="flex flex-row items-center gap-4 px-3 py-4">
-              <CheckGreyIcon />
+            {idAdded ?  <CheckGreenIcon /> :  <CheckGreyIcon />}
               <p className="text-[16px] text-[#909090] xl:text-[20px]">
                 Provide identity documents
               </p>
@@ -96,11 +114,15 @@ const Demo = () => {
             </span>
           </div>
           <div
-            className="flex w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff] xl:w-4/12"
-            onClick={() => setShowLandTransaction(true)}
+            className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border ${landAdded ? 'border-[#01E17B] cursor-not-allowed' : 'border-[#E4E4E4]'} bg-[#fff] xl:w-4/12`}
+            onClick={() => {
+              if (!landAdded) {
+                setShowLandTransaction(true);
+              }
+            }}
           >
             <div className="flex flex-row items-center gap-4 px-3 py-4">
-              <CheckGreyIcon />
+            {landAdded ?  <CheckGreenIcon /> :  <CheckGreyIcon />}
               <p className="text-[16px] text-[#909090] xl:text-[20px]">
                 Provide Land Transaction hash
               </p>
@@ -109,7 +131,7 @@ const Demo = () => {
               <RightArrowIcon />
             </span>
           </div>
-          <div className="flex w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff] xl:w-4/12">
+          <div className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff] xl:w-4/12`}>
             <div className="flex flex-row items-center gap-4 px-3 py-4">
               <CheckGreyIcon />
               <p className="text-[16px] text-[#909090] xl:text-[20px]">
@@ -120,7 +142,7 @@ const Demo = () => {
               <RightArrowIcon />
             </span>
           </div>
-          <div className="flex w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff] xl:w-4/12">
+          <div className={`flex w-10/12 cursor-pointer flex-row items-center justify-between border border-[#E4E4E4] bg-[#fff] xl:w-4/12`}>
             <div className="flex flex-row items-center gap-4 px-3 py-4">
               <CheckGreyIcon />
               <p className="text-[16px] text-[#909090] xl:text-[20px]">
@@ -131,23 +153,25 @@ const Demo = () => {
               <RightArrowIcon />
             </span>
           </div>
+          <button
+            className="mx-auto flex w-7/12 justify-center rounded-[12px] bg-[#000] px-4 mt-3 py-3 text-[12px] text-[#fff] xl:w-2/12"
+            onClick={() => router.push("/review")}
+          >
+            Upload your documents
+          </button>
         </div>
 
         <div className="mb-20 mt-20 flex w-9/12 flex-col justify-center gap-6 text-center xl:w-4/12">
           <div>
             <span className="text-[12px] text-[#AAAAAA]">
-              By submitting you confirm that I have read the Privacy Notice and
+              By submitting you confirm that I have read the Privacy Notice and
               give my consent to the processing of my personal data, including
-              biometrics, as described in this Notification to Processing of
+              biometrics, as described in this Notification to Processing of
               Personal Data.
             </span>
           </div>
-          <button
-            className="mx-auto flex w-7/12 justify-center rounded-[12px] bg-[#DFDFDF] px-8 py-3 text-[12px] text-[#fff] xl:w-4/12"
-            onClick={() => router.push("/review")}
-          >
-            Use this template
-          </button>
+
+          <a href="">Use this template</a>
         </div>
       </div>
 
@@ -187,12 +211,12 @@ const Demo = () => {
                 type="file"
                 name="Upload"
                 id="file-upload"
-                className="flex items-center justify-center px-6"
+                className="flex items-center justifycenter px-6"
               />
             </div>
 
             <div className="mt-8">
-              <button className="w-full rounded-[10px] bg-[#000] p-4 text-[#fff]">
+              <button className="w-full rounded-[10px] bg-[#000] p-4 text-[#fff]" onClick={() => {setIdAdded(true); setShowIdToaster(true); setShowDocuments(false);}}>
                 Add
               </button>
             </div>
@@ -238,13 +262,27 @@ const Demo = () => {
             </div>
 
             <div className="mt-8">
-              <button className="w-full rounded-[10px] bg-[#000] p-4 text-[#fff]">
+              <button className="w-full rounded-[10px] bg-[#000] p-4 text-[#fff]" onClick={() => {setLandAdded(true); setShowLandToaster(true); setShowLandTransaction(false);}}>
                 Add
               </button>
             </div>
           </div>
         </div>
       </BaseModal>
+
+      <SuccessToaster
+        show={showIdToaster}
+        setShow={setShowIdToaster}
+        heading="Document provided"
+        body="Your Document has been submitted!"
+      />
+
+      <SuccessToaster
+        show={showLandToaster}
+        setShow={setShowLandToaster}
+        heading="Document provided"
+        body="Your Document has been submitted!"
+      />
     </div>
   );
 };
