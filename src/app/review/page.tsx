@@ -10,7 +10,7 @@ const Review = () => {
   const { data } = api.post.validate.useQuery();
 
   useEffect(() => {
-    fetch("/api/validate")
+    fetch("https://zkapi-production.up.railway.app/person")
       .then((response) => response.json())
       .then((data) => setLandOwnershipVerificationData(data));
   }, []);
