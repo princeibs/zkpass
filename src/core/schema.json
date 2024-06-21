@@ -5,7 +5,7 @@
   "breakWall": true,
   "APIs": [
     {
-      "host": "zkapi-production.up.railway.app/person",
+      "host": "zkapi-production.up.railway.app",
       "intercept": {
         "url": "person",
         "method": "GET"
