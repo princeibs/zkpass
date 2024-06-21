@@ -64,7 +64,7 @@ const Demo = () => {
   const[showPassportToaster, setShowPassportToaster] = useState(false);
 
   // Function to check if both ID and Land transaction are completed
-  const isUploadButtonEnabled = idAdded && landAdded;
+  const isUploadButtonEnabled = idAdded && landAdded && mapAdded;
 
   // Handle ID document modal close
   const handleIdModalClose = () => {
