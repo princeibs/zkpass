@@ -1,0 +1,56 @@
+{
+  "issuer": "GhanaLandServices",
+  "desc": "A verification service that ensures the authenticity of land ownership and human identity for farmland operations.",
+  "website": "http://localhost:3000/review",
+  "breakWall": true,
+  "APIs": [
+    {
+      "host": "http://localhost:3000",
+      "intercept": {
+        "url": "/validate",
+        "method": "GET"
+      },
+      "nullifier": "data|id",
+      "assert": [
+        {
+          "key": "data|complete",
+          "value": "true",
+          "operation": "="
+        },
+        {
+          "key": "data|purpose",
+          "value": "compare",
+          "operation": "="
+        },
+        {
+          "key": "data|smile_reference|result|IsFinalResult",
+          "value": "false",
+          "operation": "="
+        },
+        {
+          "key": "data|smile_reference|result|ConfidenceValue",
+          "value": "75",
+          "operation": ">="
+        },
+        {
+          "key": "data|property_verification|verification_status",
+          "value": "Verified",
+          "operation": "="
+        },
+        {
+          "key": "data|property_verification|land_title_code",
+          "value": "exists",
+          "operation": "!="
+        }
+      ]
+    }
+  ],
+  "HRCondition": [
+    "User must be authenticated and authorized to access KYC data.",
+    "Land title must be confirmed and verified against the national land registry."
+  ],
+  "tips": {
+    "message": "Ensure your session is authenticated before attempting to access KYC data. Use proper authorization tokens. Verify that the land title code exists in the national registry."
+  },
+  "id": "0x5a2d5429967b4516b85753ad14fbe88a"
+}

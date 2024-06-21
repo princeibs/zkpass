@@ -1,6 +1,19 @@
+'use client'
+
+import { useEffect, useState } from "react";
 import {HurrayIcon } from "~/assets/icons/icons";
 
 const Review = () => {
+  const [landOwnershipVerificationData, setLandOwnershipVerificationData] = useState(null);
+
+  useEffect(() => {
+    fetch("/api/validate")
+      .then((response) => response.json())
+      .then((data) => setLandOwnershipVerificationData(data));
+  }, []);
+
+  console.log(landOwnershipVerificationData);
+
   return (
     <div className="flex flex-col h-screen">
       <nav className="fixed h-8 w-full items-center bg-[#000]">
