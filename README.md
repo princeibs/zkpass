@@ -27,3 +27,11 @@ You can check out the [create-t3-app GitHub repository](https://github.com/t3-os
 ## How do I deploy this?
 
 Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+
+
+## Resources
+
+- Figma: [https://www.figma.com/design/qWCfwjX4rgzBaS7NnC88vJ/zkPass%3AGH?node-id=151-351&t=ggrAO5RoJAbNNcFg-0](https://www.figma.com/design/qWCfwjX4rgzBaS7NnC88vJ/zkPass%3AGH?node-id=93-245&t=ggrAO5RoJAbNNcFg-0)
+- Presentation Script: https://docs.google.com/document/d/1n3UsNiAqL4P2xI7lj6Qg0rZoU3JpETR1Bqzifqdxnl8/edit?usp=sharing
+- Google slides: https://docs.google.com/presentation/d/1dMIlL17pngIpmMIdIspoKwCxhZh6iXAMMLka4zp3UKA/edit?usp=sharing
+- 
