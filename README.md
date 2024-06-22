@@ -34,4 +34,11 @@ Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/ver
 - Figma: [https://www.figma.com/design/qWCfwjX4rgzBaS7NnC88vJ/zkPass%3AGH?node-id=151-351&t=ggrAO5RoJAbNNcFg-0](https://www.figma.com/design/qWCfwjX4rgzBaS7NnC88vJ/zkPass%3AGH?node-id=93-245&t=ggrAO5RoJAbNNcFg-0)
 - Presentation Script: https://docs.google.com/document/d/1n3UsNiAqL4P2xI7lj6Qg0rZoU3JpETR1Bqzifqdxnl8/edit?usp=sharing
 - Google slides: https://docs.google.com/presentation/d/1dMIlL17pngIpmMIdIspoKwCxhZh6iXAMMLka4zp3UKA/edit?usp=sharing
-- 
+
+
+
+### Documentation and Project Overview
+- Litepaper: https://docs.google.com/document/d/1WDrpmg99D8ty8tZHJqhSfLeCgE5v12hJJCBntUsyz_4/edit?usp=sharing
+- zk GH usecase: https://docs.google.com/document/d/1r4B3fwYfrTeOoJrmF9CsoBnR-23YImLNYbvOECZ3jx8/edit?usp=sharing
+- zk Transgate API: https://github.com/buildafrica/zkapi
+- zk ProofVerifier Contract: https://github.com/buildafrica/zkapi/tree/main/contracts
