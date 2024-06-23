@@ -1,32 +1,31 @@
-# Create T3 App
+# Zeek
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+---
 
-## What's next? How do I make an app with this?
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+https://github.com/princeibs/zkpass/assets/8960757/f08a3fd9-ee1a-412d-8f07-af497eb18f6d
 
-## Learn More
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+## Zeek what?
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+Zeek is a trustless KYC platform
+ that enables any RWA (Real World Asset) provider verify the identity of off-chain assets on-chain. Our Zeek Marketplace provides a wide range of KYC & KYB packs that organizations can use to verify the ownership & validity of any real world commodity, from land, real estate, cash crops yields, vehicles and Government identification documents in a privacy-perseving manner that is ZK proof. Powered by Zk Pass
 
-## How do I deploy this?
+ <img width="739" alt="image" src="https://github.com/princeibs/zkpass/assets/8960757/8cc103f9-861f-4cb8-84fe-cbae0a953a2c">
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+ 
+
+## Zeek why?
+
+Current real-world assets are valued at over 8 billion USD in 2024, and that number is growing.
+- 
+According to investopedia, businesses spend 45% of their compliance budget on KYC, Transak State of RWA Tokenization Report 2024 estimates that real-world assets economy will be worth about over 4 trillion USD within the next 7 years. Zeek is building trustless KYC rails for the future of RWAs
+
+<img width="986" alt="image" src="https://github.com/princeibs/zkpass/assets/8960757/96a98c8c-12d6-4608-86e1-6746736364a7">
+
 
 
 ## Resources
